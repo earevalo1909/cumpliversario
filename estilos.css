@@ -1,0 +1,86 @@
+:root{--sol:#f7b500;--sol2:#ffd85c;--tallo:#3f7a2e;--tierra:#4a2b12;--rosa:#d6456b;
+--cursiva:'Caveat',cursive;--serif:'Fraunces',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font:18px/1.75 'Nunito',system-ui,sans-serif;color:var(--tierra);overflow-x:hidden;
+ background:radial-gradient(circle at 80% 0,#fff6c9,transparent 45%),linear-gradient(#ffe9a8,#ffd3a0 50%,#ffe08a) fixed;
+ padding-top:env(safe-area-inset-top)}
+body.bloqueado{overflow:hidden;height:100vh}
+#campo{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.flor{position:absolute;bottom:-6%;transform-origin:50% 100%;animation:mece 5s ease-in-out infinite alternate}
+.flor svg{display:block;width:100%;height:auto;overflow:visible}
+@keyframes mece{from{transform:rotate(-3.5deg)}to{transform:rotate(3.5deg)}}
+#lluvia{position:fixed;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+main{position:relative;z-index:1}
+section{max-width:720px;margin:0 auto;padding:56px 16px}
+.rev{opacity:0;transform:translateY(30px);transition:opacity 1s,transform 1s}
+.rev.visto{opacity:1;transform:none}
+.papel{background:rgba(255,249,226,.84);backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px);
+ border-radius:44px 14px 48px 16px;padding:40px 28px;box-shadow:0 14px 44px rgba(120,70,0,.2)}
+.papel:nth-of-type(even){border-radius:16px 46px 14px 44px}
+.papel p{font-size:1.22rem;line-height:1.9;margin-bottom:1.1em}
+.centro{text-align:center}
+h2{font:700 2.9rem/1 var(--cursiva);color:var(--rosa);margin-bottom:22px}
+h2.suelto{text-align:center;text-shadow:0 2px 0 #fff8}
+h2.grande{font-size:3.4rem}
+.feliz{font:1.7rem var(--cursiva);color:var(--rosa)}
+.firma{font:700 2rem var(--cursiva)!important;color:var(--rosa);text-align:right}
+#portada{min-height:100svh;display:flex;flex-direction:column;justify-content:center;text-align:center}
+#portada h1{font:700 clamp(2.2rem,10vw,3.8rem)/1.05 var(--serif);color:var(--tierra);text-shadow:0 2px 0 #fff9}
+.edad{font:700 clamp(9rem,50vw,15rem)/.85 var(--serif);color:var(--sol);-webkit-text-stroke:3px var(--tierra);
+ paint-order:stroke fill;margin:16px 0;text-shadow:6px 6px 0 rgba(74,43,18,.25);animation:late 2.4s ease-in-out infinite}
+@keyframes late{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.baja{font:1.5rem var(--cursiva);margin-top:26px;animation:baja 2.4s ease-in-out infinite}
+@keyframes baja{50%{transform:translateY(8px)}}
+/* Fotos: grandes y sueltas, no en cuadrícula */
+.collage{display:flex;flex-direction:column;gap:40px}
+.foto{width:94%;background:#fffdf5;padding:10px 10px 14px;border-radius:12px;box-shadow:0 16px 36px rgba(90,50,0,.3);cursor:zoom-in;transition:transform .5s}
+.foto:nth-child(odd){align-self:flex-start;transform:rotate(-2deg)}
+.foto:nth-child(even){align-self:flex-end;transform:rotate(1.8deg)}
+.foto:hover,.foto:active{transform:rotate(0) scale(1.02)}
+.foto img{width:100%;display:block;border-radius:7px}
+.vacio{min-height:360px;display:grid;place-items:center;text-align:center;padding:16px;border-radius:7px;background:linear-gradient(135deg,var(--sol2),#ffb36b)}
+.foto figcaption{font:500 1.7rem/1.2 var(--cursiva);text-align:center;margin-top:10px}
+/* Contador */
+.soles{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin:18px 0}
+.sol{width:92px;height:92px;border-radius:50%;background:radial-gradient(circle,#ffe27a,var(--sol));display:grid;place-content:center;
+ box-shadow:0 0 0 6px #ffd85c66,0 8px 20px rgba(150,90,0,.3);line-height:1}
+.sol b{font:700 2rem var(--serif)}.sol span{font-size:.8rem}
+#seg{font:1.6rem var(--cursiva);color:var(--rosa)}
+/* Deshojar */
+#fd{width:min(88vw,380px);display:block;margin:0 auto;overflow:visible;filter:drop-shadow(0 8px 10px #0003)}
+.pet{cursor:pointer;transform-box:fill-box;transform-origin:center;transition:transform 1.4s ease-in,opacity 1.4s}
+.pet:hover{filter:brightness(1.12)}
+.pet.cae{transform:translate(var(--dx),110px) rotate(var(--r));opacity:0;pointer-events:none}
+#msg{font:700 2.1rem/1.15 var(--cursiva);color:var(--rosa);min-height:4.6em;display:grid;place-items:center;margin-top:10px}
+button.suave{font:700 1.5rem var(--cursiva);background:var(--sol);color:var(--tierra);border:0;border-radius:30px;padding:6px 26px;cursor:pointer}
+/* Música */
+.disco{display:flex;align-items:center;gap:16px;width:100%;padding:12px 0;background:none;border:0;border-bottom:1px dashed #4a2b1244;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.ico{flex:0 0 48px;height:48px;border-radius:50%;background:var(--rosa);color:#fff;display:grid;place-items:center}
+.disco.suena .ico{animation:gira 3s linear infinite;background:var(--sol);color:var(--tierra)}
+@keyframes gira{to{transform:rotate(360deg)}}
+.disco b{display:block;font:700 1.15rem var(--serif)}.disco span{font-size:.9rem;opacity:.7}
+#botonMusica{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:30;width:54px;height:54px;border-radius:50%;border:0;
+ background:var(--rosa);color:#fff;font-size:1.5rem;box-shadow:0 6px 18px #0004}
+#botonMusica.suena{animation:gira 4s linear infinite;background:var(--sol);color:var(--tierra)}
+#final{text-align:center;padding-bottom:140px}
+#final p{font:700 2.6rem/1.15 var(--cursiva);color:var(--rosa);text-shadow:0 2px 0 #fff9}
+/* Puerta, visor y detalles */
+#puerta{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;
+ background:radial-gradient(circle at 50% 40%,#fff3b8,#ffc96b);transition:opacity 1.4s,visibility 1.4s}
+#puerta.fuera{opacity:0;visibility:hidden}
+#capullo{background:none;border:0;cursor:pointer;width:min(70vw,300px)}
+#capullo svg{width:100%;transform:scale(.6) rotate(0);animation:late 2s ease-in-out infinite;transition:transform 1.4s,opacity 1.4s}
+#capullo.abre svg{animation:none;transform:scale(1.7) rotate(60deg);opacity:0}
+#puerta p{font:700 2.2rem/1.1 var(--cursiva);max-width:12em;margin-top:6px;color:var(--tierra)}
+#puerta small{margin-top:10px;opacity:.6}
+#visor{position:fixed;inset:0;z-index:60;background:#000d;display:grid;place-items:center;padding:14px;cursor:zoom-out}
+#visor img{max-width:100%;max-height:92vh;border-radius:10px}
+.cora{position:fixed;z-index:50;pointer-events:none;font-size:1.8rem;animation:sube 1.6s ease-out forwards}
+@keyframes sube{to{transform:translateY(-120px) scale(1.5);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Evita que el visor de fotos aparezca al iniciar */
+#visor[hidden] {
+    display: none !important;
+}
