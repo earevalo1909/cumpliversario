@@ -40,9 +40,9 @@ const CONTENIDO = {
 
   tituloGaleriaAniv: "Lo que hemos vivido, locuras y sobre todo CONSUEDUARDADAS",
   fotosAniv: [
-    { archivo: "fotos/aniv1.webp", texto: "Nuestro recuerdo favorito" },
-    { archivo: "fotos/aniv2.webp", texto: "Nuestro recuerdo favorito" },
-    { archivo: "fotos/aniv3.webp", texto: "Nuestro recuerdo favorito" },
+    { archivo: "fotos/aniv1.webp", texto: "Nuestro 1er mes juntos amor mio" },
+    { archivo: "fotos/aniv2.webp", texto: "Nuestro viaje relajante que fue el inicio de todo" },
+    { archivo: "fotos/aniv3.webp", texto: "Aquella escapada que tanto nos encanto a los 2" },
     { archivo: "fotos/aniv4.webp", texto: "Otro día que no olvido" }
   ],
 
